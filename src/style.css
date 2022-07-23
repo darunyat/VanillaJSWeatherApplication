@@ -31,6 +31,9 @@ ul {
   padding: 0;
   margin: 0;
 }
+.city-info {
+  text-transform: capitalize;
+}
 li {
   list-style: none;
   color: rgb(182, 177, 177);
