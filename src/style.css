@@ -7,8 +7,8 @@ body {
   color: rgb(182, 177, 177);
   line-height: 28px;
 }
-.weather-icon {
-  padding-right: 5px;
+img {
+  margin-right: 5px;
   height: 64px;
   width: 64px;
 }

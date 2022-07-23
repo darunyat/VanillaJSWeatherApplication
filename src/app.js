@@ -1,5 +1,5 @@
 let apiKey = "a161492f71b97ed4d827ea73bfed8c93";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dehli&appid=${apiKey}&units=metric`;
 
 console.log(apiUrl);
 
@@ -44,5 +44,13 @@ function displayTemperature(response) {
   document.querySelector(`#date`).innerHTML = formatDate(
     response.data.dt * 1000
   );
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  console.log(response.data.weather[0].main);
+  let alt = response.data.weather[0].main;
+  iconElement.setAttribute("alt", alt);
 }
 axios.get(apiUrl).then(displayTemperature);
