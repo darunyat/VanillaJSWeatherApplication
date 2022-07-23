@@ -31,7 +31,7 @@ ul {
   padding: 0;
   margin: 0;
 }
-.city-info {
+li:first-letter {
   text-transform: capitalize;
 }
 li {
