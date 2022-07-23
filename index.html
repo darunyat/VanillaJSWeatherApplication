@@ -24,25 +24,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1 class="city">New York</h1>
-        <ul>
-          <li>Friday 05:00</li>
-          <li>Rainy</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <i class="fa-solid fa-cloud-bolt"></i>
-            12°C | F
-          </div>
-          <div class="col-6">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1 class="city">New York</h1>
             <ul>
-              <li>Precipitation:0%</li>
-              <li>Humidity:70%</li>
-              <li>Wind 2 km/h</li>
+              <li>Friday 05:00</li>
+              <li>Rainy</li>
             </ul>
           </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex flex-row">
+                <div class="p-2 weather-icon">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                    alt="cloudy"
+                  />
+                </div>
+                <div class="p-2">
+                  <strong>12</strong
+                  ><span class="unit">°C |<a href="#"> F</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation:0%</li>
+                <li>Humidity:70%</li>
+                <li>Wind 2 km/h</li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <p><a href="#">Open-source code</a> by</p>
       </div>
     </div>
     <script src="src/app.js"></script>
