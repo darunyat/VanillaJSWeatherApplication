@@ -20,6 +20,30 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `Last updated: ${day} ${hours}:${minutes}`;
 }
+
+function displayForecast() {
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+  `<div class="col-sm-2 day-of-the-week">
+  <span class="weather-forecast-date">${day}</span>
+  <img
+  src="http://openweathermap.org/img/wn/04d@2x.png"
+  alt="icon"
+  width="36"
+  class="weather-icon"  />
+ <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max"> 27° </span>
+  <span class="weather-forecast-temperature-min"> 22° </span>
+  </div>
+  </div>`;
+  });
+  console.log(forecastHTML);
+  forecastHTML = forecastHTML + `</div>`;
+  document.querySelector(`#forecast`).innerHTML = forecastHTML;
+}
+displayForecast();
 function displayTemperature(response) {
   celciusTemperature = response.data.main.temp;
   console.log(response.data);
