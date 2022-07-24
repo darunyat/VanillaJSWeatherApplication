@@ -30,22 +30,24 @@
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-sm-9">
-            <input
-              type="search"
-              placeholder="Enter a city"
-              class="form-control"
-              id="city-input"
-              autocomplete="off"
-            />
-            </div>
-            <div class="col-sm-3">
-            <input type="submit" value="Search"
-             class="btn btn-outline-primary w-100"
-            />
-            
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-sm-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-outline-primary w-100"
+                />
+              </div>
             </div>
           </form>
-          </div>
+
           <div class="overview">
             <h1 class="city" id="city">New York, US</h1>
             <ul class="city-info">
@@ -56,15 +58,16 @@
           <div class="row">
             <div class="col-6">
               <div class="d-flex flex-row">
-                <div class="p-2 weather-icon">
+                <div class="p-2">
                   <img src="" alt="" id="icon" class="float-left" />
                 </div>
                 <div class="p-2">
                   <strong id="current-temperature"></strong
                   ><span class="unit">
                     <a href="#" id="celcius-link" class="active">°C</a>
-                    
-                    |<a href="#" id="farenheit-link"> °F</a></span>
+
+                    |<a href="#" id="farenheit-link"> °F</a></span
+                  >
                 </div>
               </div>
             </div>
@@ -75,9 +78,33 @@
               </ul>
             </div>
           </div>
+          <hr />
+          <div class="weather-forecast">
+            <div class="row days-list">
+              <div class="col-sm-2 day-of-the-week">
+                <span class="weather-forecast-date">MON</span>
+                <img
+                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  alt="icon"
+                  width="36"
+                  class="weather-icon"
+                />
+
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max"> 27° </span>
+                  <span class="weather-forecast-temperature-min"> 22° </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p><a href="https://github.com/darunyat/week-7-vanilla">Open-source code</a> by</p>
       </div>
+      <p>
+        <a href="https://github.com/darunyat/week-7-vanilla"
+          >Open-source code</a
+        >
+        by
+      </p>
     </div>
     <script src="src/app.js"></script>
   </body>
