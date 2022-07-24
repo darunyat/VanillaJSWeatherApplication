@@ -21,40 +21,52 @@ function formatDate(timestamp) {
   return `Last updated: ${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function formatForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm-2 day-of-the-week">
-  <span class="weather-forecast-date">${day}</span>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm-2 day-of-the-week">
+  <span class="weather-forecast-date">${formatForecastDate(
+    forecastDay.dt
+  )}</span>
   <img
-  src="http://openweathermap.org/img/wn/04d@2x.png"
+  src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
   alt="icon"
   width="36"
   class="weather-icon"  />
- <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max"> 27° </span>
-  <span class="weather-forecast-temperature-min"> 22° </span>
+ <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max"> ${Math.round(
+   forecastDay.temp.max
+ )} </span>
+  <span class="weather-forecast-temperature-min"> ${Math.round(
+    forecastDay.temp.min
+  )} </span>
   </div>
   </div>`;
+    }
   });
-  console.log(forecastHTML);
   forecastHTML = forecastHTML + `</div>`;
   document.querySelector(`#forecast`).innerHTML = forecastHTML;
 }
 
-function displayDailyForecast(response) {
-  console.log(response.data.daily);
-}
 function getDailyForecast(coord) {
   console.log(coord);
   let apiKey = "a161492f71b97ed4d827ea73bfed8c93";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
-  axios.get(apiUrl).then(displayDailyForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
-displayForecast();
+
 function displayTemperature(response) {
   celciusTemperature = response.data.main.temp;
   console.log(response.data);
