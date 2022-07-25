@@ -31,7 +31,6 @@ function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -109,15 +108,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFarenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(`#current-temperature`);
-  celciusLink.classList.remove(`active`);
-  farenheitLink.classList.add(`active`);
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
 function displayCelciusTemperature(event) {
   event.preventDefault();
   celciusLink.classList.add(`active`);
@@ -129,8 +119,6 @@ let celciusTemperature = null;
 let form = document.querySelector(`#search-form`);
 form.addEventListener("submit", handleSubmit);
 
-let farenheitLink = document.querySelector(`#farenheit-link`);
-farenheitLink.addEventListener(`click`, displayFarenheitTemperature);
 search(`Kyiv`);
 
 let celciusLink = document.querySelector(`#celcius-link`);
