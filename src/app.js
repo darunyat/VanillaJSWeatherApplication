@@ -124,10 +124,19 @@ search(`Kyiv`);
 let celciusLink = document.querySelector(`#celcius-link`);
 celciusLink.addEventListener(`click`, displayCelciusTemperature);
 
-function getCurrentPosition(event) {
-  event.preventDefault();
-  navigator.
+function fetchCurrentPosition(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+  let apiKey = `a161492f71b97ed4d827ea73bfed8c93`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
 }
 
-let currentLocationButton = document.querySelector(`#curreny-location`);
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(fetchCurrentPosition);
+}
+
+let currentLocationButton = document.querySelector(`#current-location`);
 currentLocationButton.addEventListener(`click`, getCurrentPosition);
