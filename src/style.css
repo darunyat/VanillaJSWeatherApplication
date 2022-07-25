@@ -13,7 +13,7 @@ body {
 .city {
   font-size: 24px;
   font-weight: 100;
-  color: rgb(182, 177, 177);
+  color: rgb(32, 32, 32);
   line-height: 28px;
 }
 img {
@@ -48,7 +48,7 @@ li:first-letter {
 }
 li {
   list-style: none;
-  color: rgb(182, 177, 177);
+ color: rgb(32, 32, 32)
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -61,10 +61,10 @@ li {
 }
 .weather-app {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 60px auto;
   padding: 20px;
-  border: 1px solid rgb(189, 187, 187);
-  background-color: rgba(255, 255, 255, 0.976);
+  border: 1px solid rgba(32, 32, 32, 0.423);
+  background-color: rgba(183, 183, 183, 0.537);
 
   border-radius: 6px;
 }

@@ -46,10 +46,10 @@ function displayForecast(response) {
   class="weather-icon"  />
  <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max"> ${Math.round(
    forecastDay.temp.max
- )} </span>
+ )} °</span>
   <span class="weather-forecast-temperature-min"> ${Math.round(
     forecastDay.temp.min
-  )} </span>
+  )} °</span>
   </div>
   </div>`;
     }
@@ -123,3 +123,11 @@ search(`Kyiv`);
 
 let celciusLink = document.querySelector(`#celcius-link`);
 celciusLink.addEventListener(`click`, displayCelciusTemperature);
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.
+}
+
+let currentLocationButton = document.querySelector(`#curreny-location`);
+currentLocationButton.addEventListener(`click`, getCurrentPosition);
