@@ -16,6 +16,12 @@ body {
   color: rgb(32, 32, 32);
   line-height: 28px;
 }
+.upper-buttons{
+   color: rgb(78, 78, 78);
+}
+.upper-buttons:hover{
+     color: rgb(78, 78, 78);
+}
 img {
   margin-right: 5px;
   height: 64px;

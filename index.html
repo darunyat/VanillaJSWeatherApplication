@@ -42,7 +42,7 @@
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-outline-primary w-100"
+                  class="btn btn-outline-light w-110 upper-buttons"
                 />
               </div>
               <div class="col-sm-3">
@@ -50,7 +50,8 @@
                   type="submit"
                   value="Current Location"
                   id="current-location"
-                  class="btn btn-outline-primary w-150"
+                  class="btn btn-outline-light w-150 upper-buttons"
+                  onclick="document.querySelector(`#city-input`).value = `` "
                 />
               </div>
             </div>
@@ -73,9 +74,7 @@
                   <strong id="current-temperature"></strong
                   ><span class="unit">
                     <a href="#" id="celcius-link" class="active">°C</a>
-
-                    <!-- |<a href="#" id="farenheit-link"> °F</a></span
-                  > -->
+                  </span>
                 </div>
               </div>
             </div>
