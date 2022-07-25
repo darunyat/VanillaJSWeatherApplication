@@ -98,8 +98,18 @@ li {
   width: 50px;
 }
 
+p{
+    color: rgba(255, 255, 255, 0.669);
+}
+.gitlink{
+  text-decoration: underline;
+    color: rgba(255, 255, 255, 0.669);
+}
 
-
+.gitlink:hover{
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
 @media screen and (max-width: 600px) {
 
     body{
