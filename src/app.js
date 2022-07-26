@@ -72,6 +72,7 @@ function displayTemperature(response) {
   document.querySelector(`#current-temperature`).innerHTML =
     Math.round(celciusTemperature);
   let city = response.data.name;
+
   let county = response.data.sys.country;
   document.querySelector(`#city`).innerHTML = `${city} ${county}`;
   document.querySelector(`#description`).innerHTML =
