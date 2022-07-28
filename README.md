@@ -10,4 +10,5 @@ Displaying current weather and weather-forecast, by geolocation and search. Fetc
 Tools used:
 
 OpenWeatherMap: current weather API (https://openweathermap.org)
+
 Netlify for Hosting (https://netlify.com)
