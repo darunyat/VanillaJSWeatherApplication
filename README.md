@@ -1,7 +1,7 @@
 # WeatherApplication
 
 Vanilla JS Weather App
-Displaying current weather and weather-forecast, by geolocation and search. Fetch API, Geolocation API. 
+Displaying current weather and weather-forecast, by geolocation and search. Axios, Geolocation API. 
 
 
 
